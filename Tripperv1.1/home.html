@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Home</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--our script-->
+    <link rel="stylesheet" href="home.css">
+</head>
+<body>
+    <div id="researchDiv">
+        <form action="newItinerary.html" method="get" id="myForm">
+            <label for="textInsert"></label>
+            <input type="text" name="place" id="textInsert" placeholder="Dove vuoi andare?" required>
+            <button id="enter">GO</button><br>
+            <label for="startDate"></label>
+            <input type="date" id="startDate" name="startDate" placeholder="Data inizio" required>
+            <label for="endDate"></label>
+            <input type="date" id="endDate" name="endDate" placeholder="Data fine" required>
+        </form>
+
+
+        <script src="homeCalendarHandler.js"></script>
+    </div>
+</body>
+</html>
