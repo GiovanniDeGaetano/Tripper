@@ -1,8 +1,14 @@
 $(function() {
     $("#itinerary").click(function (){
        $(this).hide();
-       newButton();
+        document.createElement('input');
+       //newButton();
     });
+    const storedDates = localStorage.getItem('selectedDates');
+    if (storedDates) {
+        const {startDate, endDate} = JSON.parse(storedDates);
+        //alert("ciao " + startDate + " " + endDate);
+    }
 });
 
 function newButton(){

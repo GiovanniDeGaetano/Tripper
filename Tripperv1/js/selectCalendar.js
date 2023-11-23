@@ -1,3 +1,6 @@
+let startDate = new Date(),endDate = new Date();
+localStorage.setItem('selectedDates', JSON.stringify({ startDate, endDate }));
+
 $(function() {
     // Inizializza il datepicker con l'opzione range
     $('#dateRange').daterangepicker({
@@ -11,7 +14,8 @@ $(function() {
         minDate: new Date(),
         showDropdowns: true
     }).on('apply.daterangepicker',function(ev, picker){
-        let startDate = picker.startDate.format('DD-MM-YYYY');
-        let endDate = picker.endDate.format('DD-MM-YYYY');
+        startDate = picker.startDate.format('DD-MM-YYYY');
+        endDate = picker.endDate.format('DD-MM-YYYY');
+        localStorage.setItem('selectedDates', JSON.stringify({ startDate, endDate }));
     });
 });
