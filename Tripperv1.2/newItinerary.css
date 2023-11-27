@@ -11,27 +11,44 @@
     flex-direction: row;
 }
 /*-------------------------------------------ACCORDION'S STYLE--------------------------------------------------------*/
+
 /* style of accordion*/
 #itineraryAccordion{
     padding: 2vh;
     width: 30%;
     /* make the day's list scrollable */
     overflow-y: auto;
-    max-height: 100vh;
+
     /*--------------------------------*/
 }
 
 /* style of accordion's headers */
 #itineraryAccordion .ui-accordion-header{
-    background-color: orange;
+    background-color: deeppink;
     color: white;
     text-align: center;
     font-size: 20px;
 }
+
 
 /* Accordion's icon */
 #itineraryAccordion .ui-icon{
  display: none; /*hide accordion's arrow*/
 }
 
-/*--------------------------------------------------------------------------------------------------------------------*/
+/*--------------------------------------------DAYS FORM STYLE---------------------------------------------------------*/
+
+
+/*----------------------------------------ATTRACTION FORM STYLE-------------------------------------------------------*/
+
+.attractionForm{
+    display: inline;
+}
+
+.hour{
+    margin: 1rem;
+}
+
+.attractionName{
+    width: 60%;
+}
