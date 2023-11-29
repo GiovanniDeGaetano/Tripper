@@ -46,9 +46,10 @@
 }
 
 .hour{
-    margin: 1rem;
+    margin: 0.5rem;
 }
 
 .attractionName{
-    width: 60%;
+    width: 50%;
+    margin: 0.5rem;
 }
