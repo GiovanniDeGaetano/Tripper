@@ -7,11 +7,8 @@ const NOMINATIM_API_BASE_URL = 'https://nominatim.openstreetmap.org/search?forma
 // Constant for Overpass API base URL
 const OVERPASS_API_BASE_URL = 'https://maps.mail.ru/osm/tools/overpass/api/interpreter?data=';
 
-// Variable to store the map
-let map;
 
-// Marker variable
-let newMarker;
+
 
 // Function to retrieve the user's current position using the Geolocation API
 function fetchUserPosition() {
@@ -29,9 +26,10 @@ function fetchUserPosition() {
 }
 
 // Function to create a map using the Leaflet library and center it on the specified coordinates
-function loadMap(coordinates) {
-    // Create the map and set the initial view to the specified coordinates
-    map = L.map('map').setView(coordinates, 13);
+function loadMap(map, lat,lon) {
+    // Create the map and set the initial view to the specified lat,lon
+
+    map.setView({lat,lon}, 15);
 
     // Add an OpenStreetMap tile layer to the map
     L.tileLayer(OPENSTREETMAP_TILE_LAYER_URL, {
@@ -45,10 +43,26 @@ function loadMap(coordinates) {
 }
 
 // Function to add a marker to the map at the specified coordinates
-function addMarker(coordinate) {
+function addAttractionMarker(map, name, lat ,lon) {
     // Create a marker at the specified coordinates
-    newMarker = L.marker(coordinate).addTo(map);
+    let newMarker = L.marker({lat, lon}).addTo(map);
+
+
+    // popup information
+    newMarker.bindPopup(`<b>${name}</b>`).openPopup();
+
+    // Bind the popup to open on mouseover
+    newMarker.on('mouseover', function () {
+        this.openPopup();
+    });
+
+    // Close the popup on mouseout (optional)
+    newMarker.on('mouseout', function () {
+        this.closePopup();
+    });
+
 }
+
 
 // Function to fetch the coordinates of a location using Nominatim
 function fetchNominatim(placeToSearch) {
@@ -71,7 +85,7 @@ function fetchNominatim(placeToSearch) {
                 // Check if there are any results in the response
                 if (data.length > 0) {
                     // Extract latitude and longitude from the response and update placeCoordinates array
-                    const placeCoordinates = [data[0].lat, data[0].lon];
+                    const placeCoordinates = {lat:data[0].lat, lon:data[0].lon};
                     // Resolve the promise with the updated placeCoordinates array
                     resolve(placeCoordinates);
                 } else {
