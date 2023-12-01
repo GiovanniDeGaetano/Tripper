@@ -41,7 +41,7 @@ document.addEventListener("DOMContentLoaded", function () {
                     '<label for="hour">hour :</label>' +
                     '<input type="time" class="hour" name="hour">' +
                     '<label for="attraction"></label>'+
-                    '<input type="text" class="attractionName" name="attraction" placeholder="drag an attraction and drop here!">'+
+                    '<input type="text" class="attractionName" name="attraction" placeholder="drag an attraction and drop here!" readonly>'+
                     '<button class="cancAttractionButton">canc</button>'+
                 '</form>' +
         '</div>';
@@ -91,10 +91,6 @@ document.addEventListener("DOMContentLoaded", function () {
     accordionContent.append('<button class ="addAttractionButton">ADD ATTRACTION</button>');
 
 
-    /*make the formsList in a sortable element*/
-    $( function() {
-        $( ".formsList" ).sortable();
-    } );
 
     /*add the first form in alla formsList element*/
     let formList = $(".formsList");
@@ -132,7 +128,7 @@ document.addEventListener("DOMContentLoaded", function () {
         let cancAttractionFather = $(this).parent().parent().remove();
     });
 
-
+/*--------------------------------------------------------------------------------------------------------------------*/
 
 
 

@@ -5,20 +5,33 @@
 
 /* container wrap map and itineraryAccordion*/
 #itineraryContainer{
-    height: 98vh;
     width: 100%;
     display: flex;
     flex-direction: row;
+}
+#suggestAttractionList{
+    width: 30%;
+    height: 98vh;
+    /* make the day's list scrollable */
+    overflow-y: scroll;
+    /*--------------------------------*/
+}
+
+.suggestAttraction{
+    padding: 1%;
+    border: solid black;
+    margin: 1%;
+    text-align: center;
+    background-color: pink;
 }
 /*-------------------------------------------ACCORDION'S STYLE--------------------------------------------------------*/
 
 /* style of accordion*/
 #itineraryAccordion{
-    padding: 2vh;
     width: 30%;
+    height: 98vh;
     /* make the day's list scrollable */
-    overflow-y: auto;
-
+    overflow-y: scroll;
     /*--------------------------------*/
 }
 
@@ -43,6 +56,7 @@
 .attractionForm{
     display: inline;
     flex-wrap: wrap;
+    margin: 5%;
 
 }
 
@@ -51,6 +65,5 @@
 }
 
 .attractionName{
-    width: 50%;
     margin: 0.5rem;
 }
