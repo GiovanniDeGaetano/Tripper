@@ -1,0 +1,30 @@
+
+
+#newItineraryContainer{
+    display: flex;
+    flex-direction: row;
+}
+
+/*LEFT CONTAINER ELEMENT*/
+#leftContainer{
+    display: flex;
+    flex-direction: column;
+}
+
+#filterButtonsContainer{
+    display: flex;
+    flex-direction: row;
+}
+
+#map{
+    height: 300px;
+}
+
+
+#uggestedPlacesContainer{
+
+    /*cami questo è il container che contiene i posti suggeriti*/
+}
+.suggestedPlace{
+/*cami questa è la classe dei singoli posti suggeriti*/
+}
