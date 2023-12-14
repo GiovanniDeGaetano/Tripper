@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Home</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!--jquery/jqueryui local lib-->
+    <link rel="stylesheet" href="jquery-ui-1.13.2/jquery-ui.min.css">
+    <script src="jquery-ui-1.13.2/external/jquery/jquery.js"></script>
+    <script src="jquery-ui-1.13.2/jquery-ui.min.js"></script>
+
+    <!--date range picker-->
+    <link rel="stylesheet" href="daterangepicker-master/daterangepicker.css">
+    <script src="daterangepicker-master/moment.min.js"></script>
+    <script src="daterangepicker-master/daterangepicker.js"></script>
+
+    <!--leafleatjs autocomplete css cdn-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/tomickigrzegorz/autocomplete@1.8.3/dist/css/autocomplete.min.css"/>
+
+    <!--custom css-->
+    <link rel="stylesheet" href="css/home.css">
+</head>
+<body>
+
+
+<div id="userInput">
+    <form action="newItinerary.html" method="post">
+        <label for="destination"></label>
+        <div class="auto-search-wrapper"> <!--DONT TOUCH!!! leafleaft autocomplete-->
+            <input type="text" autocomplete="off" id="destination" class="full-width" placeholder="enter the city name"/>
+        </div>
+        <button type="submit" id="travel">Travel</button>
+    </form>
+    <label for="dateRange"></label>
+    <input type="text" id="dateRange" readonly>
+</div>
+
+
+
+<!--leafleatjs autocomplete js cdn-->
+<script src="https://cdn.jsdelivr.net/gh/tomickigrzegorz/autocomplete@1.8.3/dist/js/autocomplete.min.js"></script>
+<script src="js/autocomplete.js"></script>
+
+<!--date range picker-->
+<script src="js/homeCalendarHandler.js"></script>
+
+</body>
+</html>
