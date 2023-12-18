@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="Images/_logo_.png">
+    <!--leafleatjs-->
+    <link rel="stylesheet" href="leafleat/leaflet.css">
+    <script src="leafleat/leaflet.js"></script>
+
+    <!--jquery/jqueryui-->
+    <script src="jquery-ui-1.13.2/external/jquery/jquery.js"></script>
+    <link rel="stylesheet" href="jquery-ui-1.13.2/jquery-ui.css">
+    <script src="jquery-ui-1.13.2/jquery-ui.js"></script>
+
+    <!--our script-->
+    <link rel="stylesheet" href="css/newItinerary.css">
+    <div id="logo">
+        <a href="index.html">
+            <img src="Images/_logo_.png" alt="Logo">
+        </a>
+    </div>
+    <title>Itinerario</title>
+</head>
+<body>
+
+<div id="newItineraryContainer">
+    <div id="leftContainer">
+
+        <div id="filterButtonsContainer">
+            <button class="filterButtons" id="restaurantAndFastFoodButton">RESTAURANT AND FAST FOOD</button>
+            <button class="filterButtons" id="museumAndGalleryButton">MUSEUM AND ART GALLERY</button>
+            <button class="filterButtons" id="viewPointAndArtworkButton">VIEWPOINT AND ARTWORK</button>
+            <button class="filterButtons" id="attractionAndThemeParkButton">ATTRACTION AND PARK</button>
+            <button class="filterButtons" id="zooAndAquariumButton">ZOO AND AQUARIUM</button>
+        </div>
+
+        <div id="map"></div>
+
+        <div class="loading-container">
+            <img class="airplane" src="Images/aero.png" alt="Airplane">
+        </div>
+        <div id="suggestedPlacesContainer"><!--suggestedPlace--></div>
+
+    </div>
+
+    <div id="itineraryBox">
+        <form id="myForm">
+            <div id="itineraryAccordion"></div>
+            <input type="submit" id="saveButton" value="Save">
+        </form>
+    </div>
+
+</div>
+
+
+
+    <!--our script-->
+    <script src="js/mapLibrary.js"></script>
+    <script src="js/myLib.js"></script>
+
+    <script src="js/newItineraryMapHandler.js"></script>
+    <script src="js/newItineraryHandler.js"></script>
+</body>
+</html>

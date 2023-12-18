@@ -1,0 +1,14 @@
+.column-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+/* Stile per la colonna myItinerary */
+#myItinerary {
+    width: 40%;
+}
+
+/* Stile per la colonna eventCalendar */
+#eventCalendar {
+    width: 60%;
+}

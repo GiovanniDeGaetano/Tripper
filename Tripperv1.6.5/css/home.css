@@ -1,0 +1,86 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #FFEFD5;
+    font-family: 'Arial', sans-serif;
+}
+
+#logo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+}
+
+#logo img {
+    width: 90px;
+    height: auto;
+}
+
+.action-buttons-container {
+    display: flex;
+    justify-content: flex-start; /* Align buttons to the start (left) */
+}
+
+.action-button {
+    background-color: transparent;
+    color: #ff9500;
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.action-button:hover {
+    background-color: #FED8B1;
+}
+
+#userInput {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    width: 80%;
+    max-width: 400px;
+}
+
+.auto-search-wrapper,
+#dateRange {
+    margin-bottom: 15px;
+}
+
+#dateRange {
+    display: block;
+}
+
+#travel {
+    background-color: #ff9500;
+    color: #fff;
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 9px;
+    margin-bottom: 8px;
+    width: 100%;
+    transition: background-color 0.3s;
+}
+
+#travel:hover {
+    background-color: #FED8B1;
+}
+
+.ui-datepicker.ui-datepicker-multi  {
+    width: 100% !important;
+}
+
+.ui-datepicker-multi .ui-datepicker-group {
+    float: none;
+}
