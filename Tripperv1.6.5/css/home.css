@@ -5,6 +5,16 @@ body {
     font-family: 'Arial', sans-serif;
 }
 
+#background-video {
+    position: fixed;
+    top: 0;
+    left: 0;
+    min-width: 100%;
+    min-height: 100%;
+    z-index: -1; /* Posiziona il video dietro agli altri elementi */
+}
+
+
 #logo {
     display: flex;
     justify-content: space-between;
@@ -15,6 +25,23 @@ body {
 #logo img {
     width: 90px;
     height: auto;
+}
+
+#dateRange {
+    padding: 10px;
+    font-size: 16px;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    color: #333;
+    width: 200px;
+    outline: none;
+    cursor: pointer;
+}
+
+#dateRange::placeholder {
+    color: #999;
 }
 
 .action-buttons-container {
@@ -59,23 +86,38 @@ body {
     display: block;
 }
 
-#travel {
-    background-color: #ff9500;
-    color: #fff;
-    padding: 10px 20px;
-    font-size: 16px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    margin-top: 9px;
-    margin-bottom: 8px;
-    width: 100%;
-    transition: background-color 0.3s;
+.auto-search-wrapper {
+    position: relative;
+    display: inline-block;
 }
 
-#travel:hover {
-    background-color: #FED8B1;
-}
+    
+    #travel {
+        position: absolute;
+        top: 50%;
+        right: 5px;
+        transform: translateY(-50%);
+        background-color: #FFAA00;
+        color: #fff;
+        border: none;
+        border-radius: 50%;
+        padding: 5px;
+        cursor: pointer;
+        font-size: 20px;
+        line-height: 1;
+        width: 30px; /* Imposta la larghezza del pulsante */
+        height: 30px; /* Imposta l'altezza del pulsante */
+        overflow: hidden; /* Nascondi eventuali contenuti che fuoriescono dalle dimensioni del pulsante */
+    }
+    
+    #travel img {
+        width: 100%;
+        height: auto;
+    }
+    
+    #travel:hover {
+        opacity: 0.8;
+    }
 
 .ui-datepicker.ui-datepicker-multi  {
     width: 100% !important;

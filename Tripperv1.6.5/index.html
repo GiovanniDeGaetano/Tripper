@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <title>Home</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+    <link rel="icon" type="image/x-icon" href="Images/_logo_.png">
     <!--jquery/jqueryui local lib-->
     <link rel="stylesheet" href="jquery-ui-1.13.2/jquery-ui.min.css">
     <script src="jquery-ui-1.13.2/external/jquery/jquery.js"></script>
@@ -20,30 +20,29 @@
 
     <!--custom css-->
     <link rel="stylesheet" href="css/home.css">
-    <div id="logo">
-        <a href="index.html">
-            <img src="Images/_logo_.png" alt="Logo">
-        </a>
-
 </head>
 <body>
-
-
-<div class="action-buttons-container">
-    <button class="action-button" id="itineraryButton">My Itineraries</button>
-    <button class="action-button" id="loginButton">Login</button>
+    <video autoplay loop muted id="background-video">
+        <source src="Images/cloud.mp4" type="video/mp4">
+    </video>
+    <div class="action-buttons-container">
+        <button class="action-button" id="itineraryButton">Old Itineraries</button>
+        <button class="action-button" id="loginButton">Login</button>
+    </div>
 </div>
-
 
 <div class="content">
     <div id="userInput">
         <form action="newItinerary.html" method="post">
             <label for="destination"></label>
             <div class="auto-search-wrapper">
-                <input type="text" autocomplete="off" id="destination" class="full-width" placeholder="enter the city name"/>
+                <input type="text" autocomplete="off" id="destination" class="full-width" placeholder="Enter the city name"/>
+                <button type="submit" id="travel" class="circular-button">
+                    <img src="Images/paper.png" alt="Your Image">
+                </button>
             </div>
-            <button type="submit" id="travel">Travel</button>
         </form>
+        
         <label for="dateRange"></label>
         <input type="text" id="dateRange" readonly>
     </div>

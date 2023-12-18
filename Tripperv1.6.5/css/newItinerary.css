@@ -112,8 +112,8 @@ button {
     padding: 10px;
     width: 100%;
     text-align: center;
-    font-family: 'Hedvig Letters Serif', serif;
-    font-size: 16px;
+    font-family: 'Hedvig Letters Serif', serif; 
+    font-size: 16px; 
 }
 
 #itineraryBox{
@@ -125,8 +125,8 @@ button {
     padding: 20px;
     border: 1px solid #ddd;
     border-radius: 5px;
-    font-family: 'Hedvig Letters Serif', serif;
-    font-size: 16px;
+    font-family: 'Hedvig Letters Serif', serif; 
+    font-size: 16px; 
 }
 
 .accordionContent{
@@ -149,27 +149,29 @@ button {
 
 .loading-container {
     position: relative;
-    width: 800px; /* Larghezza desiderata di suggestedPlacesContainer */
-    height: 150px; /* Altezza desiderata di suggestedPlacesContainer */
+    width: 100%; /* Larghezza del 100% rispetto al contenitore padre */
+    height: 15vw; /* Altezza proporzionale alla larghezza, puoi adattare questo valore secondo le tue preferenze */
     overflow: hidden; /* Nasconde eventuali elementi che escono dai limiti del contenitore */
 }
 
 .airplane {
-    width: 50px; /* Larghezza dell'aeroplano */
-    height: 50px; /* Altezza dell'aeroplano */
+    width: 5vw; /* Larghezza proporzionale alla larghezza del contenitore */
+    height: 5vw; /* Altezza proporzionale alla larghezza del contenitore */
     position: absolute;
-    left: -50px; /* Posizione iniziale fuori dal contenitore */
+    left: -5vw; /* Posizione iniziale fuori dal contenitore, usando unità relative */
     animation: fly 4s linear infinite;
 }
 
 @keyframes fly {
     0% {
-        left: -50px;
+        left: -5vw;
     }
     100% {
         left: 100%; /* Sposta oltre il 100% per coprire completamente il contenitore */
     }
 }
+
+
 .dragging { /*class of suggestedplace when is dragged*/
     width: 200px;
     height: 200px;
@@ -204,10 +206,10 @@ button {
     border-radius: 20px;
     cursor: pointer;
     transition: background-color 0.3s, border-color 0.3s, color 0.3s;
-
+    
     /* Imposta una larghezza fissa per il pulsante */
     width: 200px; /* Puoi regolare questa dimensione come preferisci */
-
+    
     /* Centra orizzontalmente il pulsante nel suo contenitore */
     margin-left: auto;
     margin-right: auto;
@@ -221,4 +223,24 @@ button {
 .headerDate{
     background-color: #ff9500;
     border: #FF9500;
+}
+
+#saveButton{
+    margin-top: 8px;
+    background-color: #ffaa00;
+    color: inherit;
+    padding: 10px 20px;
+    font-size: 16px;
+    border: 2px solid transparent;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s, border-color 0.3s, color 0.3s;
+    color: white;
+
+
+}
+
+#saveButton:hover{
+    opacity: 0.4;
+
 }
