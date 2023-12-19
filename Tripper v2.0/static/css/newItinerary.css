@@ -1,0 +1,246 @@
+#logo {
+    float: left;
+    margin-bottom: 5px;
+}
+#logo img {
+    width: 80px;
+    height: auto;
+}
+#contenitore-logo {
+    height: auto; /* O imposta l'altezza desiderata */
+}
+
+body {
+    background-color: #FFEFD5;
+    /* Colore di sfondo generale */
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+}
+
+
+#newItineraryContainer {
+    display: flex;
+    flex-direction: row;
+    background-color: #fff; /* Colore di sfondo del container principale */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Ombra per il container principale */
+    margin: 20px;
+}
+
+
+#leftContainer {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+}
+
+#filterButtonsContainer {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 20px;
+}
+
+button {
+    padding: 10px;
+    margin-right: 10px;
+    border: none;
+    cursor: pointer;
+}
+
+.filterButtons {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 16px;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.filterButtons:hover {
+    opacity: 0.8;
+}
+
+
+#restaurantAndFastFoodButton {
+    background-color: #ff9500;
+    color: #fff;
+}
+
+#museumAndGalleryButton {
+    background-color: #ffa200;
+    color: #fff;
+}
+
+#viewPointAndArtworkButton {
+    background-color: #ffaa00;
+    color: #fff;
+}
+
+#attractionAndThemeParkButton {
+    background-color: #ffb700;
+    color: #fff;
+}
+
+#zooAndAquariumButton {
+    background-color: #ffc300;
+    color: #fff;
+}
+
+
+#map {
+    height: 300px;
+    border: 1px solid #ddd; /* Bordo sottile per la mappa */
+    margin-bottom: 20px;
+}
+
+#suggestedPlacesContainer {
+    background-color: #fff;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    overflow-y: scroll;
+}
+
+.suggestedPlace {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    margin: 10px;
+    padding: 10px;
+    width: 100%;
+    text-align: center;
+    font-family: 'Hedvig Letters Serif', serif; 
+    font-size: 16px; 
+}
+
+#itineraryBox{
+    width: 40%;
+}
+
+#itineraryAccordion {
+    background-color: #fff; /* Colore di sfondo dell'accordion */
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-family: 'Hedvig Letters Serif', serif; 
+    font-size: 16px; 
+}
+
+.accordionContent{
+    min-height: 100px;
+    display: flex;
+    flex-direction: column;
+}
+
+.textAreaContainer{
+    display: flex;
+    flex-direction: column;
+    margin: 10px;
+}
+
+.textArea{
+    resize: none;
+    height: 100px; /* Set the desired height in pixels */
+    width: auto;
+}
+
+.loading-container {
+    position: relative;
+    width: 100%; /* Larghezza del 100% rispetto al contenitore padre */
+    height: 15vw; /* Altezza proporzionale alla larghezza, puoi adattare questo valore secondo le tue preferenze */
+    overflow: hidden; /* Nasconde eventuali elementi che escono dai limiti del contenitore */
+}
+
+.airplane {
+    width: 5vw; /* Larghezza proporzionale alla larghezza del contenitore */
+    height: 5vw; /* Altezza proporzionale alla larghezza del contenitore */
+    position: absolute;
+    left: -5vw; /* Posizione iniziale fuori dal contenitore, usando unità relative */
+    animation: fly 4s linear infinite;
+}
+
+@keyframes fly {
+    0% {
+        left: -5vw;
+    }
+    100% {
+        left: 100%; /* Sposta oltre il 100% per coprire completamente il contenitore */
+    }
+}
+
+
+.dragging { /*class of suggestedplace when is dragged*/
+    width: 200px;
+    height: 200px;
+}
+
+.delete-button {
+    background-color: transparent;
+    color: inherit;
+    padding: 10px 20px;
+    font-size: 16px;
+    border: 2px solid transparent;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s, border-color 0.3s, color 0.3s;
+    margin-left: 65px;
+    margin-top: 5px;
+
+}
+
+
+.delete-button:hover {
+    background-color: #ff0000; /* Rosso */
+    border-color: #ff0000;
+    color: #fff; /* Testo bianco */
+}
+.where {
+    background-color: #FF9500;
+    color: inherit;
+    padding: 8px 16px;
+    font-size: 14px;
+    border: 2px solid transparent;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s, border-color 0.3s, color 0.3s;
+    
+    /* Imposta una larghezza fissa per il pulsante */
+    width: 200px; /* Puoi regolare questa dimensione come preferisci */
+    
+    /* Centra orizzontalmente il pulsante nel suo contenitore */
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10px;
+}
+
+.where:hover {
+    opacity: 0.8;
+}
+
+.headerDate{
+    background-color: #ff9500;
+    border: #FF9500;
+}
+
+#saveButton{
+    margin-top: 8px;
+    background-color: #ffaa00;
+    color: inherit;
+    padding: 10px 20px;
+    font-size: 16px;
+    border: 2px solid transparent;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s, border-color 0.3s, color 0.3s;
+    color: white;
+
+
+}
+
+#saveButton:hover{
+    opacity: 0.4;
+
+}
