@@ -222,8 +222,6 @@ function initializeDroppable(selector) {
             // Trova l'elemento input associato all'ancora cliccata
             $(this).find(".hour").show();
 
-
-
         }
     });
 }

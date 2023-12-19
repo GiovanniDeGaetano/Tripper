@@ -1,9 +1,14 @@
 document.addEventListener("DOMContentLoaded", async function () {
+
+    // stored filterPlacesButton
+    var buttons = document.getElementsByClassName("filterButtons");
+
+    //hide the loading div when the page is loaded
     $(".loading-container").toggle();
+
     //take the destination value loaded from index.html user input
     const destination = JSON.stringify(getDataFromLocalStorage("destination"));
-    console.log(destination);
-    $("#suggestedPlacesContainer").hide();
+
     //declare and initializing the map of leaflet , 'map' is the id of map canvas
     var map = L.map('map');
 
@@ -39,10 +44,17 @@ document.addEventListener("DOMContentLoaded", async function () {
             $(placeCard).attr('data-date', '');
 
             // Modify the code that creates the placeCard to include the coordinates
-            placeCard.innerHTML = `<h2 class = "info" data-name="${place.name}">${place.name}
-                                    <input class="info hour" type="time" name="orario" required> </h2>
-                               <a class="info" href="${place.website}" target="_blank" data-website="${place.website}">Website</a>
-                               <a class="info where" data-lat="${place.latitude}" data-lon="${place.longitude}">where I am ?</a>`;
+            placeCard.innerHTML = `<h2 class="info" data-name="${place.name}">${place.name}
+                            <input class="info hour" type="time" name="orario" required> </h2>`;
+
+            if (place.website === 'N/A') {
+                console.log(place.name);
+            }else{
+                placeCard.innerHTML += `<a class="info website" href="${place.website}" target="_blank" data-website="${place.website}">Website</a>`;
+            }
+
+            placeCard.innerHTML += `<a class="info where" data-lat="${place.latitude}" data-lon="${place.longitude}">where I am ?</a>`;
+
 
             suggestedPlacesContainer.append(placeCard);
 
@@ -54,6 +66,8 @@ document.addEventListener("DOMContentLoaded", async function () {
         // Make the newly added element draggable
         initializeDraggableElement(".suggestedPlace");
         $(".hour").hide();
+
+
     }
 
 
@@ -130,8 +144,15 @@ const commonParameters = `around:${radius},${lat},${lon}`; //geographical dates 
     var attractionAndThemeParkPlaces = [];
     var zooAndAquariumPlaces = [];
 
+
     //when
     $("#museumAndGalleryButton").on("click", async function () {
+
+
+        //disable all filter buttons during the fetching
+        for(button of buttons){
+            button.disabled = true;
+        }
 
         //remove all the listed place under the map
         $(".suggestedPlace").remove();
@@ -143,20 +164,31 @@ const commonParameters = `around:${radius},${lat},${lon}`; //geographical dates 
 
         //if no data has stored of the type of place
         if (museumAndGalleryPlaces.length === 0) {
-
+            $("#suggestedPlacesContainer").toggle();
             $(".loading-container").toggle();
             //do a fetch with the query's group
             museumAndGalleryPlaces= await fetchSuggestedPLaces(museumAndGalleryQueries);
             $(".loading-container").toggle();
+            $("#suggestedPlacesContainer").toggle();
         }
 
         //put the query's result in the dom and in the map
         filterAttraction(museumAndGalleryPlaces, map);
 
+        //enable all filter buttons during the fetching
+        for(button of buttons){
+            button.disabled = false;
+        }
+
     });
 
     $("#viewPointAndArtworkButton").on("click", async function (){
 
+
+        //disable all filter buttons during the fetching
+        for(button of buttons){
+            button.disabled = true;
+        }
         //remove all the listed place under the map
         $(".suggestedPlace").remove();
         //remove all the marker on the map
@@ -165,15 +197,28 @@ const commonParameters = `around:${radius},${lat},${lon}`; //geographical dates 
         const viewpointAndArtworkQuery = [viewpointQuery, artworkQuery];
 
         if (viewpointAndArtworkPlaces.length === 0){
+            $("#suggestedPlacesContainer").toggle();
             $(".loading-container").toggle();
             viewpointAndArtworkPlaces = await fetchSuggestedPLaces(viewpointAndArtworkQuery);
             $(".loading-container").toggle();
+            $("#suggestedPlacesContainer").toggle();
         }
 
         filterAttraction( viewpointAndArtworkPlaces,map);
+
+        //enable all filter buttons during the fetching
+        for(button of buttons){
+            button.disabled = false;
+        }
     });
 
     $("#restaurantAndFastFoodButton").on("click", async function (){
+
+
+        //disable all filter buttons during the fetching
+        for(button of buttons){
+            button.disabled = true;
+        }
 
         //remove all the listed place under the map
         $(".suggestedPlace").remove();
@@ -183,17 +228,29 @@ const commonParameters = `around:${radius},${lat},${lon}`; //geographical dates 
         const restaurantAndFastFoodQuery = [restaurantQuery, fastFoodQuery];
 
         if (restaurantAndFastFoodPlaces.length === 0){
-
+            $("#suggestedPlacesContainer").toggle();
             $(".loading-container").toggle();
             restaurantAndFastFoodPlaces = await fetchSuggestedPLaces(restaurantAndFastFoodQuery);
             $(".loading-container").toggle();
+            $("#suggestedPlacesContainer").toggle();
         }
 
         filterAttraction(restaurantAndFastFoodPlaces,map);
 
+        //enable all filter buttons during the fetching
+        for(button of buttons){
+            button.disabled = false;
+        }
+
     });
 
     $('#attractionAndThemeParkButton').on("click", async function (){
+
+
+        //disable all filter buttons during the fetching
+        for(button of buttons){
+            button.disabled = true;
+        }
 
         //remove all the listed place under the map
         $(".suggestedPlace").remove();
@@ -204,15 +261,27 @@ const commonParameters = `around:${radius},${lat},${lon}`; //geographical dates 
 
         if(attractionAndThemeParkPlaces.length === 0){
 
+            $("#suggestedPlacesContainer").toggle();
             $(".loading-container").toggle();
              attractionAndThemeParkPlaces = await fetchSuggestedPLaces(attractionAndThemeParkQuery);
             $(".loading-container").toggle();
+            $("#suggestedPlacesContainer").toggle();
         }
 
         filterAttraction(attractionAndThemeParkPlaces,map);
+
+        //enable all filter buttons during the fetching
+        for(button of buttons){
+            button.disabled = false;
+        }
     })
 
     $('#zooAndAquariumButton').on("click",  async function (){
+
+        //disable all filter buttons during the fetching
+        for(button of buttons){
+            button.disabled = true;
+        }
 
         //remove all the listed place under the map
         $(".suggestedPlace").remove();
@@ -222,12 +291,21 @@ const commonParameters = `around:${radius},${lat},${lon}`; //geographical dates 
         const  zooAndAquariumQuery = [zooQuery, aquariumQuery];
 
         if (zooAndAquariumPlaces.length === 0 ){
+            $("#suggestedPlacesContainer").toggle();
             $(".loading-container").toggle();
             zooAndAquariumPlaces = await fetchSuggestedPLaces(zooAndAquariumQuery)
             $(".loading-container").toggle();
+            $("#suggestedPlacesContainer").toggle();
         }
 
         filterAttraction(zooAndAquariumPlaces,map);
+
+        //enable all filter buttons during the fetching
+        for(button of buttons){
+            button.disabled = false;
+        }
+
+
     })
 
 });

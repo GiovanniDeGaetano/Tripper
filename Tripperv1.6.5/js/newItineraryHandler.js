@@ -22,7 +22,7 @@ initializeAccordion("#itineraryAccordion");
 // Create the accordion with the provided form, dates, and date options
 createAccordion("#itineraryAccordion", dates, dateOptions);
 
-
+//se leggete allora il commit funziona
 
 
 
