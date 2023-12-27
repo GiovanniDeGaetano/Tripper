@@ -23,13 +23,23 @@ document.addEventListener("DOMContentLoaded", async function () {
         console.error(error);
     }
 
+    if (isMobileDevice()) { //inizialize the courusell from mobile
+        var nextButton = $('<button id="nextBtn">Next</button>');
+        var prevButton = $('<button id="prevBtn">Previous</button>');
+        $('#leftContainer').append(prevButton, nextButton);
 
+        nextButton.button();
+        prevButton.button();
+    }
 
     /*---------------------------------------FILTER BUTTON-------------------------------------------------------------*/
 
     //create the place card elem in the dom in the suggested places elem, take in input the previous stored
 
+    var slides =[]; //slide of carousel
+
     function filterAttraction(places, map) {
+        slides.length = 0; //clear the carousel
         $("#suggestedPlacesContainer").show();
         // Scroll through the array of places
         for (let place of places) {
@@ -98,6 +108,9 @@ document.addEventListener("DOMContentLoaded", async function () {
         initializeDraggableElement(".suggestedPlace");
         $(".hour").hide();
 
+        slides = document.querySelectorAll(".suggestedPlace"); //fill the carousel
+
+        handlerCarousel(); //handler of the carousel
 
     }
 
@@ -215,6 +228,8 @@ const commonParameters = `around:${radius},${lat},${lon}`; //geographical dates 
         for(button of buttons){
             button.disabled = false;
         }
+
+
 
     });
 
@@ -350,6 +365,56 @@ const commonParameters = `around:${radius},${lat},${lon}`; //geographical dates 
 
 
     })
+    //---------------------------------------------CAROUSELLE -------------------------------------------------------------------------------------------
+    function handlerCarousel() {
+        if (isMobileDevice()) {
+            // Seleziona il pulsante "Precedente"
+            const prevBtn = $("#prevBtn");
+            // Seleziona il pulsante "Successivo"
+            const nextBtn = $("#nextBtn");
+
+            // Indice della slide attualmente visualizzata
+            let currentIndex = 0;
+
+            // Funzione per aggiornare la classe 'active' della slide corrente
+            function updateCarousel() {
+                slides.forEach((slide, index) => {
+                    if (index === currentIndex) {
+                        slide.classList.add("active"); // Aggiungi la classe 'active' alla slide corrente
+                    } else {
+                        slide.classList.remove("active"); // Rimuovi la classe 'active' dalle altre slide
+                    }
+                });
+            }
+
+            // Gestione del click sul pulsante "Precedente"
+            prevBtn.on("click", function () {
+                currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+                updateCarousel();
+                console.log("premuto");
+            });
+
+            // Gestione del click sul pulsante "Successivo"
+            nextBtn.on("click", function () {
+                console.log("premuto");
+                currentIndex = (currentIndex + 1) % slides.length;
+                updateCarousel();
+            });
+
+            // Azzera l'indice quando la funzione viene chiamata
+            currentIndex = 0;
+        }
+    }
+
+
+
+
+
+
+
+
+
+
 
 });
 

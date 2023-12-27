@@ -94,61 +94,13 @@ function loadMap(map, lat, lon, zoom) {
  * @param place - the place to put on the target map
  */
 
-///////////////////////////////////////////////////////////////////////
-var restauantAndFastfoodIcon = L.icon({
-    iconUrl: '../leafleat/images/marker_food.png',
-   
-    iconSize:     [100, 150], // size of the icon
-    shadowSize:   [50, 64], // size of the shadow
-    iconAnchor:   [22, 94], // point of the icon which will correspond to marker's location
-    shadowAnchor: [4, 62],  // the same for the shadow
-    popupAnchor:  [-3, -76] // point from which the popup should open relative to the iconAnchor
-});
+
 
 function addPlaceMarker(map, place) {
     let newMarker
-    switch (place.type) {
-        case "restaurant":
-        
-         newMarker = L.marker([place.latitude, place.longitude],{icon: restauantAndFastfoodIcon}).addTo(map);
 
-          break;
-        case "fast_food":
-         
-         newMarker = L.marker([place.latitude, place.longitude],{icon: restauantAndFastfoodIcon}).addTo(map);
+    newMarker = L.marker([place.latitude, place.longitude]).addTo(map);
 
-
-            break;
-       case "museum":
-            placeCard.classList.add('museum_place');
-          break;
-        case "gallery":
-            placeCard.classList.add('gallery_place');
-            break; 
-        case "viewpoint":
-            placeCard.classList.add('viewpoint_place');
-            break;
-        case "artwork":
-            placeCard.classList.add('artwork_place');
-          break;
-        case "attraction":
-            placeCard.classList.add('attraction_place');
-          break;
-        case "zoo":
-            placeCard.classList.add('zoo_place');
-          break;
-        case "aquarium":
-            placeCard.classList.add('aquarium_place');
-            break;
-        case "theme_park":
-            placeCard.classList.add('theme_park_place');
-                break;
-    }
-
-
-
-
-    
     // Popup information with name and website
     let popupContent = `<b>${place.name}</b>`;
 
