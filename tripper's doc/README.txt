@@ -1,3 +1,0 @@
-
-
----OPEN INDEX.HTML TO READ THE DOC---
