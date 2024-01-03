@@ -1,0 +1,43 @@
+@media only screen and (max-width: 767px) {
+    /* Contenitore del carosello */
+    .suggestedPlacesContainer {
+        width: 100%;
+        overflow: hidden;
+    }
+
+    /* Stile di base per ogni slide del carosello */
+    .suggestedPlace {
+        display: none; /* Nasconde inizialmente tutte le slide */
+        width: 100%;
+        height: 200px;
+        box-sizing: border-box;
+        padding: 20px;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        background-color: #f9f9f9;
+        text-align: center;
+        font-size: 18px;
+        color: #333;
+    }
+
+    /* Stile per mostrare la slide attiva */
+    .suggestedPlace.active {
+        display: block;
+    }
+
+    /* Stili per i pulsanti "Precedente" e "Successivo" */
+    #prevBtn, #nextBtn {
+        background-color: #4CAF50;
+        color: white;
+        padding: 10px 15px;
+        margin-top: 10px;
+        cursor: pointer;
+        border: none;
+        border-radius: 5px;
+    }
+
+    /* Stili hover per i pulsanti */
+    #prevBtn:hover, #nextBtn:hover {
+        background-color: #45a049;
+    }
+}

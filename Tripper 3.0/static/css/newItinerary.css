@@ -1,0 +1,463 @@
+#logo {
+    float: left;
+    margin-bottom: 5px;
+}
+#logo img {
+    width: 80px;
+    height: auto;
+}
+#contenitore-logo {
+    height: auto; /* O imposta l'altezza desiderata */
+}
+
+body {
+    background-color: #FFEFD5;
+    /* Colore di sfondo generale */
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+}
+
+#newItineraryContainer {
+    display: flex;
+    flex-direction: row;
+    background-color: #fff; /* Colore di sfondo del container principale */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Ombra per il container principale */
+    margin: 20px;
+}
+#newItineraryContainer {
+    display: flex;
+    flex-direction: row; /* Imposta la direzione dei figli come riga */
+}
+
+#leftContainer {
+    padding: 20px;
+}
+
+#map {
+    height: 300px;
+    border: 1px solid #ddd;
+    margin-bottom: 20px;
+    z-index: 100;
+}
+
+#myForm {
+    margin-top: 20px;
+}
+
+@media screen and (max-width: 600px) {
+    #newItineraryContainer {
+        flex-direction: column; /* Imposta la direzione dei figli come colonna quando lo schermo è piccolo */
+    }
+
+    #leftContainer {
+        padding: 10px;
+    }
+
+    #myForm {
+        margin-top: 0;
+
+    }
+
+    #map {
+        width: 100%;
+    }
+
+    #itineraryBox{
+        width: 100%;
+
+    }
+}
+
+#filterButtonsContainer {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.filterButtons {
+    flex: 1;
+    padding: 10px;
+}
+
+
+button {
+    padding: 10px;
+    margin-right: 10px;
+    border: none;
+    cursor: pointer;
+}
+
+.filterButtons {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 16px;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    transition: background-color 0.3s, color 0.3s;
+    margin-bottom: 4px;
+}
+
+.filterButtons:hover {
+    opacity: 0.8;
+}
+
+
+#restaurantAndFastFoodButton {
+    background-color: #8ecae6;
+    color: #fff;
+}
+
+#museumAndGalleryButton {
+    background-color: #219ebc;
+    color: #fff;
+}
+
+#viewPointAndArtworkButton {
+    background-color: #169986;
+    color: #fff;
+}
+
+#attractionAndThemeParkButton {
+    background-color: #ffb703;
+    color: #fff;
+}
+
+#zooAndAquariumButton {
+    background-color: #fb8500;
+    color: #fff;
+}
+
+#suggestedPlacesContainer {
+    background-color: #fff;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    overflow-y: scroll;
+     max-height: 50vh;
+}
+
+.suggestedPlace {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    margin: 10px;
+    padding: 10px;
+    width: 100%;
+    text-align: center;
+    font-family: 'Hedvig Letters Serif', serif;
+    font-size: 16px;
+}
+
+#itineraryBox {
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+#itineraryAccordion {
+    background-color: #fff;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-family: 'Hedvig Letters Serif', serif;
+    font-size: 16px;
+}
+
+
+.accordionContent{
+    min-height: 100px;
+    display: flex;
+    flex-direction: column;
+}
+
+.textAreaContainer{
+    display: flex;
+    flex-direction: column;
+    margin: 10px;
+}
+
+.textArea{
+    resize: none;
+    height: 100px;
+    width: auto;
+}
+
+/*LOADING DELL'AEROPLANO */
+.loading-container {
+    position: relative;
+    width: 100%;
+    height: 0;
+    padding-bottom: 52.56%; /* Altezza proporzionale alla larghezza (473 / 900 * 100) */
+    overflow: hidden;
+}
+
+.airplane {
+    width: 10%; /* Larghezza proporzionale alla larghezza del contenitore */
+    height: auto; /* Altezza automatica in base al rapporto di aspetto originale */
+    position: absolute;
+    left: -10%; /* Posizione iniziale fuori dal contenitore, usando percentuali relative */
+    animation: fly 4s linear infinite;
+}
+
+@keyframes fly {
+    0% {
+        left: -10%;
+    }
+    100% {
+        left: 100%;
+    }
+}
+/*****************************/
+
+
+.dragging { /*class of suggestedplace when is dragged*/
+    width: 200px;
+    height: 200px;
+}
+
+.delete-button,
+.deletePersonalizedStop{
+    background-color: transparent;
+    color: inherit;
+    padding: 10px 20px;
+    font-size: 16px;
+    border: 2px solid transparent;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s, border-color 0.3s, color 0.3s;
+    margin-top: 9px; /* Modificato il margine superiore */
+    margin-bottom: 9px; /* Aggiunto il margine inferiore */
+    display: flex;
+    justify-content: center; /* Centrare orizzontalmente */
+    align-items: center; /* Centrare verticalmente */
+    margin-left: 35%;
+}
+
+
+/* Media query per adattare il pulsante su schermi più piccoli */
+@media screen and (max-width: 600px) {
+    .delete-button,
+    .deletePersonalizedStop {
+        margin-left: 0; /* Rimuovi il margine sinistro specifico su schermi più piccoli */
+        width: auto; /* Larghezza automatica per adattarsi al contenitore su schermi più piccoli */
+    }
+}
+
+.delete-button:hover,
+.deletePersonalizedStop:hover {
+    background-color: #ff0000; /* Rosso */
+    border-color: #ff0000;
+    color: #fff; /* Testo bianco */
+}
+
+.headerDate{
+    background-color: #023047;
+    border: #023047;
+}
+
+#saveButton{
+    margin-top: 8px;
+    background-color: #ffaa00;
+    padding: 10px 20px;
+    font-size: 16px;
+    border: 2px solid transparent;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s, border-color 0.3s, color 0.3s;
+    color: white;
+}
+
+#saveButton:hover{
+    opacity: 0.4;
+
+}
+
+/* Stile per il link del sito web */
+/* Stile per il pulsante '.website' */
+.website {
+    display: inline-block;
+    padding: 8px 16px;
+    margin: 5px 0;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s, border-color 0.3s, color 0.3s;
+    width: 100%;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+
+.where {
+    display: inline-block;
+    padding: 8px 16px;
+    margin: 5px 0;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s, border-color 0.3s, color 0.3s;
+}
+
+
+.website:hover,
+.where:hover {
+   opacity: 0.8;
+}
+
+/* Stili per dispositivi con larghezza massima di 600px (responsive) */
+@media screen and (max-width: 600px) {
+    .website,
+    .where {
+        width: auto; /* Imposta la larghezza su 'auto' per adattarsi al contenuto */
+        margin: 5px; /* Aggiusta il margine per uno spazio più equilibrato */
+    }
+}
+
+/*TUTTO QUELLO CHE è PRESENTE NELLA CLASSE TextAreaConteiner */
+.personalizedPlaceButton {
+    background-color: #ffb703;
+    opacity: 0.9;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 10px;
+  }
+
+  .personalizedPlaceButton:hover {
+    opacity: 0.5;
+  }
+
+  /* Stile base per tutti i dispositivi */
+  @media (min-width: 768px) {
+    .personalizedPlaceButton {
+      padding: 15px 30px;
+    }
+  }
+
+  /* Stile per dispositivi tablet */
+  @media (min-width: 576px) and (max-width: 767px) {
+    .personalizedPlaceButton {
+      padding: 12px 24px;
+    }
+  }
+
+  /* Stile per dispositivi smartphone */
+  @media (max-width: 575px) {
+    .personalizedPlaceButton {
+      padding: 9px 18px;
+    }
+  }
+
+.textAreaContainer {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-end;
+    padding: 10px;
+  }
+
+.textArea {
+    border: 1px solid #ccc;
+    padding: 8px;
+    margin-right: 10px;
+  }
+
+
+.tempo {
+    position: relative;
+    padding: 8px;
+    background-color: #ffe6b3;
+    border: 1px solid #ffcc80;
+    border-radius: 5px;
+    outline: none;
+    transition: background-color 0.3s;
+    height: 10px;
+    transform: translateY(-180%);
+    margin-right: 5px;
+  }
+
+  /* Stile per dispositivi desktop */
+  @media (min-width: 768px) {
+    .tempo {
+      transform: translateY(-60%);
+    }
+  }
+
+  /* Stile per dispositivi tablet */
+  @media (min-width: 576px) and (max-width: 767px) {
+    .tempo {
+      transform: translateY(-70%);
+    }
+  }
+
+  /* Stile per dispositivi smartphone */
+  @media (max-width: 575px) {
+    .tempo {
+      transform: translateY(-80%);
+    }
+  }
+
+  /* Cambia lo stile al passaggio del mouse */
+.tempo:hover {
+    background-color: #ffd699;
+  }
+
+
+.restaurant_place .where{
+    background-color: #8ecae6;
+
+}
+
+.fast_place.where{
+    background-color: #8ecae6;
+
+}
+
+.zoo_place .where{
+    background-color: #fb8500;
+}
+
+.aquarium_place .where{
+    background-color: #fb8500;
+}
+
+.museum_place .where{
+    background-color: #219ebc;
+}
+
+.viewpoint_place .where{
+    background-color: #169986;
+}
+
+.theme_park_place .where{
+    background-color: #ffb703;
+}
+
+.gallery_place .where{
+    background-color: #219ebc;
+}
+
+.artwork_place .where{
+    background-color: #169986;
+}
+
+.attraction_place .where{
+    background-color: #ffb703;
+}
+
+
+#loginModal {
+    z-index: 1000;
+}
+
+#saveMessageContainer {
+    text-align: center; /* Posiziona al centro rispetto al pulsante */
+    margin-top: 10px;   /* Margine superiore per spaziare dal pulsante */
+    display: none;      /* Inizialmente nascosto */
+}
+
+#saveMessage {
+    background-color: #4CAF50; /* Colore di sfondo */
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+}
