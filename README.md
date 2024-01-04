@@ -15,4 +15,7 @@
     <li> Run flask: <code>$ flask run</code></li>
   </ol>
   <br>
-   
+ <h2> ~How to use Tripper?</h2>
+  <ol> 
+   <li> <code>$ flask run</code> command return the IP address and port to connect to access the PWA.</li>
+     </ol>
