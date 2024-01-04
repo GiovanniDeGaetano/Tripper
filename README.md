@@ -11,7 +11,7 @@
   </ol> 
 <h2> ~How to run Tripper?</h2>
   <ol> 
-    <li> run mongoDB(the instructions depend on your OS). </li>
+    <li> Run mongoDB(the instructions depend on your OS). </li>
     <li> Run flask: <code>$ flask run</code></li>
   </ol>
   <br>
