@@ -9,3 +9,10 @@
     <li> If you don't have mongoDB, follow <a href="https://docs.mongodb.com/manual/tutorial/install-mongodb-on-ubuntu/"> this guide</a> to install it.</li>
   <li>(linux only) you can start mongoDB with the command: <code>$ sudo systemctl start mongod</code>
   </ol> 
+<h2> ~How to run Tripper?</h2>
+  <ol> 
+    <li> run mongoDB(the instructions depend on your OS). </li>
+    <li> Run flask: <code>$ flask run</code></li>
+  </ol>
+  <br>
+   
