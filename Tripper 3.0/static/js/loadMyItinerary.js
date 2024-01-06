@@ -12,8 +12,15 @@ $(function () {
         },
         success: function (myItinerary) {
             if (myItinerary.length  && myItinerary[0].itinerary.length) {
-                myItinerary[0].itinerary.forEach(function (destination){
-                    accordion.append('<h1 id = "'+ destination.id +'" class = "header">'+ destination.destination+'<button class="remove-accordion"> X </button></h1>');
+                myItinerary[0].itinerary.forEach(function (destination){ 
+                    accordion.append(`
+                    <h1 id="${destination.id}" class="header">
+                        ${destination.destination}
+                        <button class="remove-accordion">×</button>
+                    </h1>
+                `);
+
+                   
                     let randomString = generateRandomString(14);
                     accordion.append('<div id = "'+ randomString +'" class="accordionContent"></div>');
 
@@ -30,13 +37,12 @@ $(function () {
                                         <h2 class="info">${event.event.title}</h2>
                                         <strong>Hour:</strong>${event.hour}`;
                                         if (event.event.website !== undefined){
-                                        htmlString += `<a class="info" href="${event.event.website}" target="_blank" data-website="${event.event.website}">Website</a>`;
+                                        htmlString += `<br><a class="info" href="${event.event.website}" target="_blank" data-website="${event.event.website}">Website</a>`;
                                         }
-                                        htmlString += `<a class="info where" data-lat="${event.event.coordinates.lat}" data-lon="${event.event.coordinates.lon}">where I am ?</a><br>`;
 
                                     $("#" + randomString).append(htmlString);
                                 }else {
-                                    $("#" + randomString).append("<strong>Hour:</strong>" + event.hour + "<strong>Event:</strong> " + event.event + "<br>");
+                                    $("#" + randomString).append("<br><strong>Event:</strong> " + event.event+"<br><strong>Hour:</strong>" + event.hour+"<br>");
                                 }
                             });
                         }

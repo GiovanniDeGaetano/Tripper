@@ -1,25 +1,200 @@
-.column-container {
-    display: flex;
-    justify-content: space-between;
+body {
+    background-color: #FFEFD5;
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif; /* Set your preferred font-family */
 }
 
-/* Stile per la colonna myItinerary */
-#myItinerary {
-    width: 40%;
-}
 
-/* Stile per la colonna eventCalendar */
-#eventCalendar {
-    width: 60%;
+#logo img {
+    width: 80px;
+    height: auto;
 }
 #logo {
     float: left;
     margin-bottom: 5px;
 }
-#logo img {
-    width: 80px;
-    height: auto;
+
+.navbar {
+    text-align: right;
+    margin: 0 20px 20px 0; /* Modifica il margine come necessario */
 }
-#contenitore-logo {
-    height: auto; /* O imposta l'altezza desiderata */
+
+
+/* Your existing styles for other elements */
+
+.container {
+    background-color: white;
+    border-radius: 15px;
+    margin: 20px auto; /* Auto margin to center horizontally */
+    padding: 20px; /* Adjust the padding as needed */
+    max-width: 1000px; /* Adjust the maximum width as needed */
+}
+
+.column-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center the columns horizontally */
+}
+
+/* Stile per la colonna myItinerary */
+#myItinerary {
+    width: 80%; /* Adjust the width as needed */
+    margin-bottom: 20px; /* Adjust the margin as needed */
+}
+
+/* Stile per la colonna eventCalendar */
+#eventCalendar {
+    width: 80%; /* Adjust the width as needed */
+}
+
+/* Stili di base per i pulsanti */
+.fc-prev-button,
+.fc-prev-button:hover,
+.fc-next-button,
+.fc-next-button:hover {
+    background-color: #ffb703 !important;
+    border-color: #ffb703 !important;
+    color: white !important;
+}
+
+.fc-today-button,
+.fc-today-button:hover {
+    background-color: #fb8500 !important;
+    border-color: #fb8500 !important;
+    color: white !important;
+}
+
+.fc-col-header-cell-cushion {
+    color: #fb8500 !important;
+}
+
+.fc-toolbar-title {
+    color: #169986 !important;
+}
+
+
+/* Styles for smaller screens (e.g., phones) */
+@media (max-width: 600px) {
+    .fc-header-toolbar.fc-toolbar-ltr {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    /* Containers for the h2 and button groups */
+    .fc-toolbar-chunk {
+      flex: 1;
+      margin-bottom: 10px;
+    }
+  
+    /* Container for the h2 */
+    .fc-toolbar-chunk.fc-toolbar-title-container {
+      background-color: #fff;
+      border-bottom: 1px solid #ccc;
+    }
+  
+    /* h2 */
+    .fc-toolbar-title {
+      margin-top: 0;
+    }
+  
+    /* Button group container */
+    .fc-toolbar-chunk.fc-button-group-container {
+      text-align: right;
+      position: relative;
+      bottom: 10px;
+    }
+  }
+/********************************************************************/
+/* Aggiungi il seguente codice al tuo foglio di stile CSS o all'interno del tag <style> nel tuo documento HTML */
+
+/* Rendi la tabella responsive */
+/* Aggiungi il seguente codice al tuo foglio di stile CSS o all'interno del tag <style> nel tuo documento HTML */
+
+/* Stile per schermi più piccoli */
+@media only screen and (max-width: 600px) {
+    /* Rendi il calendario più stretto */
+    .fc-scroller-liquid-absolute {
+        width: auto !important;
+        height: auto !important;
+    }
+
+    /* Rendi le celle del calendario più strette */
+    .fc-daygrid-day {
+        min-width: 40px !important; /* O il valore che ritieni opportuno */
+    }
+
+    /* Nascondi il testo dei giorni nella parte superiore del calendario */
+    .fc-col-header-cell-cushion {
+        display: none;
+    }
+
+    /* Riduci la dimensione del numero del giorno */
+    .fc-daygrid-day-number {
+        font-size: 12px !important; /* O il valore che ritieni opportuno */
+    }
+    .fc-daygrid-body {
+        width: 100%;
+      }
+}
+
+@media screen and (max-width: 600px) {
+    .fc-col-header-cell-cushion {
+      font-size: 12px; /* Imposta la dimensione del carattere più piccola per schermi più piccoli */
+    }
+  }
+
+  .info where{
+    margin-left: 3px;
+
+}
+
+.header {
+    display: flex;
+    flex-direction: row;
+    justify-content: center; /* Centra verticalmente */
+    align-items: center; /* Centra orizzontalmente */
+    background-color: #ffb703; /* Colore di sfondo */
+    border-radius: 10px; /* Bordo arrotondato */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Ombra */
+    padding: 20px; /* Padding interno */
+    position: relative;
+    overflow: hidden;
+    font-size: 24px;
+}
+
+h1 {
+    margin-right: 10px; /* Aggiungi uno spazio tra l'h1 e il pulsante */
+}
+
+.remove-accordion {
+    background-color: #ff5733; /* Colore di sfondo del pulsante */
+    color: #fff; /* Colore del testo del pulsante */
+    border: none; /* Rimuovi il bordo predefinito */
+    padding: 5px 10px; /* Padding per spaziatura interna del pulsante */
+    font-size: 14px; /* Dimensione del testo del pulsante */
+    font-family: 'Arial', sans-serif; /* Tipo di carattere */
+    border-radius: 5px; /* Bordo arrotondato del pulsante */
+    margin-left: 15px;
+    cursor: pointer; /* Cambia il cursore al passaggio sopra il pulsante */
+}
+
+.remove-accordion:hover {
+    background-color: #ff8148; /* Colore di sfondo al passaggio del mouse del pulsante */
+}
+
+h2{
+    font-size: 20px;
+}
+
+.fc-event-title {
+    color: black; /* Colore del testo nero */
+    font-weight: bold; /* Grassetto */
+    font-size: 10px; /* Dimensione del font 10px */
+}
+
+.fc-event {
+    background-color: #8ecae6;
+    opacity: 0.9;
 }

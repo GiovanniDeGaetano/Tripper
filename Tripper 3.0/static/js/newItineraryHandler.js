@@ -18,7 +18,7 @@ function isMobileDevice() {
 
 if (isMobileDevice()) {
         $("#button_accordion").accordion({ active: false, collapsible: true });
-        $("#header_accordion").text("ciao");
+        $("#header_accordion").text("Click here for more locations");
 
     }
 

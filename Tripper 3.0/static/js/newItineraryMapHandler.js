@@ -373,7 +373,7 @@ const commonParameters = `around:${radius},${lat},${lon}`; //geographical dates 
 
             // Indice della slide attualmente visualizzata
             let currentIndex = 0;
-   
+
             // Funzione per aggiornare la classe 'active' della slide corrente
             function updateCarousel() {
                 slides.forEach((slide, index) => {
@@ -389,17 +389,18 @@ const commonParameters = `around:${radius},${lat},${lon}`; //geographical dates 
             prevBtn.on("click", function () {
                 currentIndex = (currentIndex - 1 + slides.length) % slides.length;
                 updateCarousel();
+                console.log("premuto");
             });
 
             // Gestione del click sul pulsante "Successivo"
             nextBtn.on("click", function () {
+                console.log("premuto");
                 currentIndex = (currentIndex + 1) % slides.length;
                 updateCarousel();
             });
 
             // Azzera l'indice quando la funzione viene chiamata
             currentIndex = 0;
-            slides[0].classList.add("active");
         }
     }
 });

@@ -17,6 +17,7 @@ body {
     margin: 0;
 }
 
+
 #newItineraryContainer {
     display: flex;
     flex-direction: row;
@@ -37,7 +38,6 @@ body {
     height: 300px;
     border: 1px solid #ddd;
     margin-bottom: 20px;
-    z-index: 100;
 }
 
 #myForm {
@@ -55,18 +55,21 @@ body {
 
     #myForm {
         margin-top: 0;
-
+    
     }
 
     #map {
         width: 100%;
-    }
+    }    
 
     #itineraryBox{
         width: 100%;
 
     }
+    
+
 }
+
 
 #filterButtonsContainer {
     display: flex;
@@ -108,6 +111,7 @@ button {
 #restaurantAndFastFoodButton {
     background-color: #8ecae6;
     color: #fff;
+
 }
 
 #museumAndGalleryButton {
@@ -130,13 +134,13 @@ button {
     color: #fff;
 }
 
+
 #suggestedPlacesContainer {
     background-color: #fff;
     padding: 20px;
     border: 1px solid #ddd;
     border-radius: 5px;
     overflow-y: scroll;
-     max-height: 50vh;
 }
 
 .suggestedPlace {
@@ -148,22 +152,22 @@ button {
     padding: 10px;
     width: 100%;
     text-align: center;
-    font-family: 'Hedvig Letters Serif', serif;
-    font-size: 16px;
+    font-family: 'Hedvig Letters Serif', serif; 
+    font-size: 16px; 
 }
 
 #itineraryBox {
-    max-width: 700px;
-    margin: 0 auto;
+    max-width: 700px; /* Imposta una larghezza massima predefinita */
+    margin: 0 auto; /* Centra l'elemento orizzontalmente */
 }
 
 #itineraryAccordion {
-    background-color: #fff;
+    background-color: #fff; /* Colore di sfondo dell'accordion */
     padding: 20px;
     border: 1px solid #ddd;
     border-radius: 5px;
-    font-family: 'Hedvig Letters Serif', serif;
-    font-size: 16px;
+    font-family: 'Hedvig Letters Serif', serif; 
+    font-size: 16px; 
 }
 
 
@@ -181,7 +185,7 @@ button {
 
 .textArea{
     resize: none;
-    height: 100px;
+    height: 100px; /* Set the desired height in pixels */
     width: auto;
 }
 
@@ -239,14 +243,13 @@ button {
 
 /* Media query per adattare il pulsante su schermi più piccoli */
 @media screen and (max-width: 600px) {
-    .delete-button,
+    .delete-button, 
     .deletePersonalizedStop {
         margin-left: 0; /* Rimuovi il margine sinistro specifico su schermi più piccoli */
         width: auto; /* Larghezza automatica per adattarsi al contenitore su schermi più piccoli */
     }
 }
-
-.delete-button:hover,
+.delete-button:hover, 
 .deletePersonalizedStop:hover {
     background-color: #ff0000; /* Rosso */
     border-color: #ff0000;
@@ -254,13 +257,14 @@ button {
 }
 
 .headerDate{
-    background-color: #023047;
-    border: #023047;
+    background-color: #FFDD00;
+    border: #FFC300;
 }
 
 #saveButton{
     margin-top: 8px;
     background-color: #ffaa00;
+    color: inherit;
     padding: 10px 20px;
     font-size: 16px;
     border: 2px solid transparent;
@@ -268,6 +272,8 @@ button {
     cursor: pointer;
     transition: background-color 0.3s, border-color 0.3s, color 0.3s;
     color: white;
+
+
 }
 
 #saveButton:hover{
@@ -284,7 +290,7 @@ button {
     text-decoration: none;
     border-radius: 5px;
     transition: background-color 0.3s, border-color 0.3s, color 0.3s;
-    width: 100%;
+    width: 100%; 
     box-sizing: border-box;
     text-align: center;
 }
@@ -322,25 +328,25 @@ button {
     padding: 10px 20px;
     border-radius: 10px;
   }
-
+  
   .personalizedPlaceButton:hover {
     opacity: 0.5;
   }
-
+  
   /* Stile base per tutti i dispositivi */
   @media (min-width: 768px) {
     .personalizedPlaceButton {
       padding: 15px 30px;
     }
   }
-
+  
   /* Stile per dispositivi tablet */
   @media (min-width: 576px) and (max-width: 767px) {
     .personalizedPlaceButton {
       padding: 12px 24px;
     }
   }
-
+  
   /* Stile per dispositivi smartphone */
   @media (max-width: 575px) {
     .personalizedPlaceButton {
@@ -353,14 +359,18 @@ button {
     align-items: flex-start;
     justify-content: flex-end;
     padding: 10px;
+    height: 100%;
   }
-
+  
 .textArea {
     border: 1px solid #ccc;
     padding: 8px;
-    margin-right: 10px;
+    /*margin-right: 5%;
+    margin-left: 5%;*/
+    height: 140%;
+    width: 100%;
   }
-
+  
 
 .tempo {
     position: relative;
@@ -372,30 +382,31 @@ button {
     transition: background-color 0.3s;
     height: 10px;
     transform: translateY(-180%);
-    margin-right: 5px;
+    margin-right: 3%;
+    margin-top: 10%;
   }
-
+  
   /* Stile per dispositivi desktop */
   @media (min-width: 768px) {
     .tempo {
       transform: translateY(-60%);
     }
   }
-
+  
   /* Stile per dispositivi tablet */
   @media (min-width: 576px) and (max-width: 767px) {
     .tempo {
       transform: translateY(-70%);
     }
   }
-
+  
   /* Stile per dispositivi smartphone */
   @media (max-width: 575px) {
     .tempo {
       transform: translateY(-80%);
     }
   }
-
+  
   /* Cambia lo stile al passaggio del mouse */
 .tempo:hover {
     background-color: #ffd699;
@@ -445,19 +456,34 @@ button {
 }
 
 
-#loginModal {
-    z-index: 1000;
+
+/*******************************************************************/
+#header_accordion{
+    background-color: #ffb703;
+    color: white;
+}
+
+#prevBtn,
+#nextBtn {
+    background-color: #FFA500 !important; /* Colore arancione */
+    color: #fff !important; /* Testo bianco */
+    border: 1px solid #FFA500 !important; /* Bordo arancione */
+    padding: 10px 20px !important; /* Padding per spaziatura interna */
+    font-size: 16px !important; /* Dimensione del testo */
+    cursor: pointer !important; /* Cambia il cursore al passaggio sopra il bottone */
+    border-radius: 5px !important; /* Angoli arrotondati */
+}
+
+#prevBtn:hover,
+#nextBtn:hover {
+    background-color: #FFD700 !important; /* Cambia il colore al passaggio del mouse */
 }
 
 #saveMessageContainer {
-    text-align: center; /* Posiziona al centro rispetto al pulsante */
-    margin-top: 10px;   /* Margine superiore per spaziare dal pulsante */
-    display: none;      /* Inizialmente nascosto */
-}
-
-#saveMessage {
-    background-color: #4CAF50; /* Colore di sfondo */
-    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: red;
     padding: 10px;
-    border-radius: 5px;
+    margin-top: 5px;
 }
