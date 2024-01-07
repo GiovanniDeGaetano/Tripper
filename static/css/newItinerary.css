@@ -142,6 +142,7 @@ button {
     border: 1px solid #ddd;
     border-radius: 5px;
     overflow-y: scroll;
+    max-height: 400px;
 }
 
 .suggestedPlace {
