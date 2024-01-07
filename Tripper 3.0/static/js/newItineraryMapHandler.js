@@ -401,6 +401,7 @@ const commonParameters = `around:${radius},${lat},${lon}`; //geographical dates 
 
             // Azzera l'indice quando la funzione viene chiamata
             currentIndex = 0;
+            slides[0].classList.add("active");
         }
     }
 });
